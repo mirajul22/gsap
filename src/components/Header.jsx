@@ -1,19 +1,54 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
+import gsap from "gsap/all";
 
 const Header = () => {
+
+    const nav = useRef(null);
+
+  useEffect(()=>{
+    const tl = gsap.timeline();
+    const link = document.querySelectorAll('a');
+    const logo = document.querySelectorAll('.logo-ani');
+    const btn = document.querySelectorAll('button');
+
+    tl.from(logo,{
+        x:"-20",
+        duration:1.5,
+        delay:0.2,
+        opacity:0,
+        ease: 'power4.out',
+    })
+
+    tl.from(link,{
+        y:"-20",
+        duration:1,
+        opacity:0,
+        stagger:0.3,
+        ease: 'power4.out',
+    })
+
+    tl.from(btn,{
+        x:'20',
+        duration:1,
+        opacity:0,
+        ease: 'power4.out',
+    })
+      
+  })
+
   return (
    <div className="header">
     <nav className="">
         <div className="flex flex-row items-center justify-between">
 
-        <div className="cursor-pointer">
+        <div className="logo-ani cursor-pointer">
             <img src="/images/logo.png" alt="logo" />
         </div>
 
         <div className="flex flex-row items-center gap-8">
-           <div className="text-white flex flex-row gap-4">
+           <div ref={nav} className="text-white flex flex-row gap-4">
                <a href="#" className="flex flex-row items-center gap-3">Company <span><IoIosArrowDown className="" /></span></a>           
                <a href="#">Services</a>           
                <a href="#">Resources</a>           
