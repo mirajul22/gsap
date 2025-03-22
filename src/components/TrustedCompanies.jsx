@@ -1,9 +1,5 @@
 import gsap from "gsap";
 import React, { useEffect, useRef, useState } from "react";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { ModifiersPlugin } from 'gsap/ModifiersPlugin';
-
-// gsap.registerPlugin(ScrollTrigger, ModifiersPlugin);
 
 const logos1 = [
   {

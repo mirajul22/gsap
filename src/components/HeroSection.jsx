@@ -41,7 +41,7 @@ const HeroSection = () => {
       delay:0.3,
       ease: 'power4.out',
       stagger: 0.3,
-    }); // Start slightly before hero finishes
+    }); 
    
     const text =  document.querySelectorAll(".p1");
 
@@ -50,7 +50,6 @@ const HeroSection = () => {
         opacity:0,
         duration:1,
         ease: 'power4.out',
-        // stagger: 0.4,
     })
 
     const input = document.querySelectorAll('input');
@@ -60,7 +59,6 @@ const HeroSection = () => {
         opacity:0,
         duration:0.5,
         ease: 'power4.out',
-        // stagger: 0.3,
     })
 
     const btn = document.querySelectorAll('.fill');
@@ -70,14 +68,11 @@ const HeroSection = () => {
         opacity:0,
         duration:0.5,
         ease: 'power4.out',
-        // stagger: 0.3,
     })
 
   }, []);
   return (
     <section
-    //   ref={heroRef}
-    //   className="fixed bottom-0 left-0 w-[50%] h-screen bg-indigo-600 text-white flex items-center justify-center text-4xl origin-bottom"
     className='relative bg-img flex items-center justify-center'
     >
       <div ref={heroRef}
@@ -96,7 +91,6 @@ const HeroSection = () => {
 
            <div className='flex flex-row gap-6'>
             <input className='email rounded-full w-3/4 focus:none' type='email' placeholder='Email'/>
-            {/* <button type='button' className='but cursor-pointer fill text-black border-none bg-[rgba(255,168,0,1)] rounded-full'>ATTRACT</button> */}
             <FlowingButton/>
            </div>
         </div>

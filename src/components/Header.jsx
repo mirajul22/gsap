@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import gsap from "gsap/all";
 
