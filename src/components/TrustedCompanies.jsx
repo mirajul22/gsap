@@ -1,5 +1,9 @@
 import gsap from "gsap";
 import React, { useEffect, useRef, useState } from "react";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import { ModifiersPlugin } from 'gsap/ModifiersPlugin';
+
+// gsap.registerPlugin(ScrollTrigger, ModifiersPlugin);
 
 const logos1 = [
   {
@@ -109,42 +113,26 @@ const TrustedCompanies = () => {
    const r2 = useRef(null);
    const scroll1 = useRef(null);
    const [scroll,setScroll] = useState(1);
-
    useEffect(() => {
     let prevScroll = window.scrollY;
-
+  
     const detectDirection = () => {
       const currentScroll = window.scrollY;
       setScroll(currentScroll > prevScroll ? 1 : -1);
       prevScroll = currentScroll;
     };
-
+  
     window.addEventListener('scroll', detectDirection);
-
+  
     const tl1 = gsap.to(r1.current, {
       x: scroll === 1 ? "-10%" : "10%",
       ease: "none",
+      yoyo:true,
       duration: 2,
-      repeat: -1,
-      modifiers: {
-        x: gsap.utils.unitize(x => parseFloat(x) % 100), // wraparound effect
-      },
-      scrollTrigger: {
-        trigger: scroll1.current,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-      },
-    });
-
-    const tl2 = gsap.to(r2.current, {
-      x: scroll === 1 ? "10%" : "-10%",
-      ease: "none",
-      duration: 2,
-      repeat: -1,
       modifiers: {
         x: gsap.utils.unitize(x => parseFloat(x) % 100),
       },
+      repeat: -1,
       scrollTrigger: {
         trigger: scroll1.current,
         start: 'top bottom',
@@ -152,7 +140,24 @@ const TrustedCompanies = () => {
         scrub: true,
       },
     });
-
+  
+    const tl2 = gsap.to(r2.current, {
+      x: scroll === 1 ? "10%" : "-10%",
+      ease: "none",
+      yoyo:true,
+      duration: 2,
+      modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % 100),
+      },
+      repeat: -1,
+      scrollTrigger: {
+        trigger: scroll1.current,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      },
+    });
+  
     return () => {
       window.removeEventListener('scroll', detectDirection);
       tl1.kill();
@@ -183,6 +188,7 @@ const TrustedCompanies = () => {
         {/* Logos */}
         <div ref={scroll1} className='logo flex flex-col items-center justify-center gap-y-4 '>
           {/* First Row */}
+          
           <div ref={r1} className='logo1 flex flex-row flex-wrap items-center justify-center gap-x-4'>
             {logos1.map((logo) => (
               <div
