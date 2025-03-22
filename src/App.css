@@ -1,0 +1,73 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  overflow-x: hidden;
+}
+
+.header{
+  background-color: rgb(17, 16, 16);
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.btn{
+  border: 1px solid rgba(255, 168, 0, 1);
+  color: rgba(255, 168, 0, 1);
+  padding-inline: 20px;
+  padding-block: 6px;
+  cursor: pointer;
+}
+nav{
+  padding-inline: 50px;
+}
+.bg-img{
+  background: url('/images/hero_img.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.email{
+  border: 0px;
+  outline: none;
+  /* border: 2px solid rgb(17, 16, 16); */
+  border: 2px solid white;
+  padding-block: 15px;
+  color: white;
+  padding-inline: 10px;
+  /* background-color: rgb(17, 16, 16); */
+  background: transparent;
+}
+.fill{
+  padding-inline: 25px;
+  /* width: 150px; */
+  padding-block: 10px;
+  font-weight: 600;
+}
+.pad{
+  padding-block: 6rem;
+}
+.con {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 4rem;
+  gap: 15rem;
+  max-width: 1600px;
+  margin: auto;
+}
+.logo{
+  margin-top: 100px;
+}
+.btn1{
+  padding: 20px 25px;
+}
+.logo1,.logo2
+{
+  max-width: 1600px;
+}
+
