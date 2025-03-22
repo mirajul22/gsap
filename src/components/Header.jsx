@@ -5,12 +5,13 @@ import gsap from "gsap/all";
 const Header = () => {
 
     const nav = useRef(null);
+    const botn = useRef(null);
 
   useEffect(()=>{
     const tl = gsap.timeline();
     const link = document.querySelectorAll('a');
     const logo = document.querySelectorAll('.logo-ani');
-    const btn = document.querySelectorAll('button');
+    // const btn = document.querySelectorAll('button');
 
     tl.from(logo,{
         x:"-20",
@@ -28,7 +29,7 @@ const Header = () => {
         ease: 'power4.out',
     })
 
-    tl.from(btn,{
+    tl.from(botn.current,{
         x:'20',
         duration:1,
         opacity:0,
@@ -52,7 +53,7 @@ const Header = () => {
                <a href="#">Services</a>           
                <a href="#">Resources</a>           
             </div>
-            <button type="button" className="btn bg-transparent rounded-3xl text-sm">CONTACT</button> 
+            <button ref={botn} type="button" className="btn bg-transparent rounded-3xl text-sm">CONTACT</button> 
         </div>
 
         </div>
