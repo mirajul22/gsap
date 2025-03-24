@@ -76,7 +76,7 @@ const HeroSection = () => {
     className='relative bg-img flex items-center justify-center'
     >
       <div ref={heroRef}
-      className=" bottom-0  top-50 h-[30%] w-[50%] h-screen bg-white/60 backdrop-blur-md  flex items-center justify-center origin-bottom mx-auto">
+      className=" bottom-0  top-50 h-[30%] w-[50%] h-screen bg-[#111010]   flex items-center justify-center origin-bottom mx-auto">
         <div className=' flex flex-col items-left justify-center gap-3'>
            <div ref={H3Container}  className='text-white max-w-xl text-left flex flex-col gap-0 leading-none text-[90px] font-bold '>
             <h3 id='text'>Attract</h3>
