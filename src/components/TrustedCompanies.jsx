@@ -185,7 +185,7 @@ const TrustedCompanies = () => {
         <div ref={scroll1} className='logo flex flex-col items-center justify-center gap-y-4 '>
           {/* First Row */}
           
-          <div ref={r1} className='logo1 flex flex-row flex-wrap items-center justify-center gap-x-4'>
+          <div ref={r1} className='logo1 flex flex-row flex-wrap items-center justify-center gap-x-2'>
             {logos1.map((logo) => (
               <div
                 key={logo.id}
@@ -197,7 +197,7 @@ const TrustedCompanies = () => {
           </div>
 
           {/* Second Row */}
-          <div ref={r2} className='logo2 flex flex-row flex-wrap items-center justify-center gap-x-4'>
+          <div ref={r2} className='logo2 flex flex-row flex-wrap items-center justify-center gap-x-2'>
             {logos2.map((logo) => (
               <div
                 key={logo.id}
